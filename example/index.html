@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Text Animator Examples</title>
+    <style>
+        /* Page Styles */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Default Letter Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-letters">Default Letter Animation</h1>
+        </div>
+    </section>
+
+    <!-- Custom Letter Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-letters custom-letters">Custom Letter Animation</h1>
+        </div>
+    </section>
+
+    <!-- Default Word Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-words">Default Word Animation</h1>
+        </div>
+    </section>
+
+    <!-- Custom Word Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-words custom-words">Custom Side Slide Words</h1>
+        </div>
+    </section>
+
+    <!-- Default Staggered Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-staggered">Default Staggered Animation</h1>
+        </div>
+    </section>
+
+    <!-- Custom Staggered Animation -->
+    <section class="section">
+        <div class="container">
+            <h1 class="animate-text-staggered custom-staggered">Custom Scale Animation</h1>
+        </div>
+    </section>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Text Animator -->
+    <script src="../dist/textAnimator.js"></script>
+    <script>
+        const animator = new TextAnimator({
+            useScrollTrigger: true, // Enable/disable scroll triggering
+            scrollTriggerOffset: 100, // Pixels from bottom of viewport
+            defaultDuration: 1, // Animation duration in seconds
+            defaultEase: "power3.out", // Default easing function
+            autoInjectStyles: true, // Automatically inject required CSS
+            debug: false, // Enable/disable debug mode
+        });
+    </script>
+</body>
+
+</html>
